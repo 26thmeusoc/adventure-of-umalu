@@ -11,6 +11,8 @@ import jade.ui.Terminal;
 import jade.util.datatype.ColoredChar;
 import jade.util.datatype.Coordinate;
 import jade.util.datatype.Direction;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import rogue.level.Screen;
 import rogue.creature.util.Inventory;
 import rogue.creature.util.Item;
@@ -32,7 +34,7 @@ public class Player extends Creature implements Camera {
 	private String name;
 	private Inventory inventory;
 
-	public Boolean worldchange = false;   // standardmäßig ist keine Mapänderung erfolgt
+	public Boolean worldchange = false;   // standardmï¿½ï¿½ig ist keine Mapï¿½nderung erfolgt
 	/**
 	 * Creates a new Player Object
 	 * 
@@ -98,9 +100,9 @@ public class Player extends Creature implements Camera {
 						// Fight first monster on coordinate.
 						fight((Monster) actorlist.toArray()[0]);
 					} else {
-						if (world().tileAt(x() + dir.dx(), y() + dir.dy()) == ColoredChar.create('§')) {
+						if (world().tileAt(x() + dir.dx(), y() + dir.dy()) == ColoredChar.create('ï¿½')) {
 							System.out.println("Level Up");  
-							worldchange= true;					//Stellt fest, dass eine Tür gefunden wurde und somit eine Mapänderung erfolgt
+							worldchange= true;					//Stellt fest, dass eine Tï¿½r gefunden wurde und somit eine Mapï¿½nderung erfolgt
 							move(dir);
 							
 							for(Coordinate coord: getViewField()){
@@ -146,12 +148,16 @@ public class Player extends Creature implements Camera {
 		// Get random Damage for Attack
 		int damage = random.nextInt(strength) + 1;
 		// Do Damage to Opponent
-		opponent.loseHitpoints(damage);
-		// Print result
+		boolean opponentDied = opponent.loseHitpoints(damage);
+                // Print result
 		System.out.println("Du hast " + damage + " Schaden verursacht");
 		System.out.println(opponent.name() + " hat noch " + opponent.hitpoints
 				+ " HP");
 		Screen.redrawEventLine("Du verursachst " + damage + " Schaden");
+                if(opponentDied){
+                    randomlyDropItem(opponent);
+                }
+		
 		try {
 			term.getKey();
 
@@ -260,4 +266,75 @@ public class Player extends Creature implements Camera {
 		// Inventar verlassen, zeichne wieder die Karte.
 		Screen.redrawMap();
 	}
+
+    private void randomlyDropItem(Monster opponent) {
+        //TODO
+        Random random = new Random();
+        random.nextInt(strength);
+
+        switch(opponent.typenumber){
+
+            case 0:{
+                //Dragon
+                break;
+            }
+            case 1:{
+                //Orc
+
+                int zufallszahl =random.nextInt(20);
+                Item item = null;
+                try{
+                    if(zufallszahl<= 20){
+                    //Langschwert droppt zu 1/20
+                     item = new Item("Langschwert", 0, 2, 6, 0);
+                    inventory.addItem(item);
+                    //Status message
+                    Screen.redrawEventLine("Du hast ein Langschwert bekommen, druecke i, um das Inventar zu oeffnen");
+                    //Wait for pressed key
+                    term.getKey();
+
+                }else if(zufallszahl<=4){
+                    //Kurzschwert droppt zu 1/5
+                     item = new Item("Kurzschwert", 0, 1, 3,0);
+                    inventory.addItem(item);
+                    //Status message
+                    Screen.redrawEventLine("Du hast ein Kurzschwert bekommen, druecke i, um das Inventar zu oeffnen");
+		    // Wait for pressed Key
+                    term.getKey();
+                }
+
+                }catch (NotEnoughSpaceException ex) {
+                    try{
+                    //Status message
+                    Screen.redrawEventLine("Du konntest leider ein"+item.getName()+" nicht ins Inventar aufnehmen, da es voll war");
+                    //Wait for pressed key
+                    term.getKey();
+                    }catch (InterruptedException e) {
+				System.out.println("!IOException");
+				e.printStackTrace();
+                }
+                    
+                }catch (InterruptedException e) {
+				System.out.println("!IOException");
+				e.printStackTrace();
+                }break;
+            }
+            case 2:{
+                //Dummy
+                break;
+            }
+            case 3:{
+                //InvisibleZombie
+                break;
+            }
+            case 4:{
+                //Troll
+                break;
+            }
+            default:{
+                break;
+            }
+        }
+        
+    }
 }
