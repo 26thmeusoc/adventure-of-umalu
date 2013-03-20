@@ -19,6 +19,6 @@
     <j2se version="1.6+"/>
     <jar href="adventure-of-umalu.jar"/>
   </resources> 
-  <application-desc main-class="rogue/Rogue.class">
+  <application-desc main-class="rogue.Rogue">
   </application-desc>
 </jnlp>
