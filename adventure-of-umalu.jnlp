@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<!-- Using Example File from http://introcs.cs.princeton.edu/java/85application/jar/webstart.html  --> 
+<jnlp 
+  spec="1.0+" 
+  codebase="http://26thmeusoc.github.com/adventure-of-umalu/" 
+  href="adventure-of-umalu.jnlp"> 
+  <information> 
+    <title>Adventure of Umalu/title> 
+    <vendor>http://www.26thmeusoc.com</vendor> 
+    <homepage href="http://26thmeusoc.github.com/adventure-of-umalu"/> 
+    <description>Rogue-like Dungeon Crawler</description> 
+    <icon href="ICON.JPG"/>  
+    <offline-allowed/> 
+  </information> 
+  <security> 
+    <all-permissions/> 
+  </security> 
+  <resources>
+    <j2se version="1.6+"/>
+    <jar href="adventure-of-umalu.jar"/>
+  </resources> 
+  <application-desc main-class="rogue/Rogue">
+  </application-desc>
+</jnlp>
