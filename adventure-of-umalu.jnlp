@@ -5,7 +5,7 @@
   codebase="http://26thmeusoc.github.com/adventure-of-umalu/" 
   href="adventure-of-umalu.jnlp"> 
   <information> 
-    <title>Adventure of Umalu/title> 
+    <title>Adventure of Umalu</title> 
     <vendor>http://www.26thmeusoc.com</vendor> 
     <homepage href="http://26thmeusoc.github.com/adventure-of-umalu"/> 
     <description>Rogue-like Dungeon Crawler</description> 
@@ -19,6 +19,6 @@
     <j2se version="1.6+"/>
     <jar href="adventure-of-umalu.jar"/>
   </resources> 
-  <application-desc main-class="rogue/Rogue">
+  <application-desc main-class="rogue/Rogue.class">
   </application-desc>
 </jnlp>
