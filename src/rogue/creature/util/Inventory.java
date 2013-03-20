@@ -164,7 +164,7 @@ public class Inventory {
 				}
                 Item temp = wornItems[Item.ITEMTYPE_SWORD];
                 wornItems[Item.ITEMTYPE_SWORD] = null;
-                Screen.redrawEventLine("Dein "+ wornItems[Item.ITEMTYPE_SWORD].getName()+ "ist zunichte gegangen");
+              
                 this.removeItem(temp);
             }
         }
