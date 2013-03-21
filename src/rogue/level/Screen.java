@@ -66,13 +66,14 @@ public class Screen {
 			// Go through whole file
 			while (line != null) {
 				int i;
-				for (i = 0; i < line.length(); i++) {
+				int k=0;
+				for (i = 0; i < line.length()+k; i++) {
 					// Read Character at Position i in current line
-					char c = line.charAt(i);
+					char c = line.charAt(i-k);
 					if(c== '@'){
 					for(int j= 0; j < name.length(); j++){
 						term.bufferChar(i+j, lineNumber, ColoredChar.create(name.charAt(j)));
-						Thread.sleep(5);
+						Thread.sleep(10);
 						term.refreshScreen();
 					}
 					
@@ -80,11 +81,12 @@ public class Screen {
 					// System.out.println(c); // TODO Delete this line, when it
 					// is not needed anymore
 					// Put Character on Screen
-					i= i+name.length();}
+					i= i+name.length();
+					k= name.length()-1;}
 					else{
 					term.bufferChar(i, lineNumber, ColoredChar.create(c));
 					}
-					Thread.sleep(5);
+					Thread.sleep(10);
 					term.refreshScreen();}
 				// Fill rest of Line with Whitespaces
 				while (i < world.width()) {

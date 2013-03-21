@@ -82,11 +82,11 @@ public class Rogue extends JApplet implements KeyEventDispatcher {
 				world);
 		term.getKey();
 		player.setName(CharacterCreation.getCharacterName(term, world));
-		if (!SystemHelper.debug) {
+		/*if (!SystemHelper.debug) {
 			Screen.printLine(player.getName(),term,world);
 			term.getKey();
 		}
-		
+		*/
 		
 		//Screen.showFile(Path.generateAbsolutePath("maps/start.txt"),term,world);
 		//Zeigt Intro 
@@ -117,6 +117,10 @@ public class Rogue extends JApplet implements KeyEventDispatcher {
 
 		while (!player.expired()) { // Player is still living?
 			if (player.worldchangeup) { // Überprüft, ob einen Levelup erfolgt ist
+				if(level==4 && !SystemHelper.debug){
+					Screen.intro(player.getName(), Path.generateAbsolutePath("txt Dateien/Finale.txt"),term,world);
+					term.getKey();
+				}
 				world.removeActor(player); // entfernt Spieler aus der alten
 											// Welt
 				world = new Level(80, 32, player, levelorder.get(++level),
