@@ -2,6 +2,8 @@ var searchData=
 [
   ['lambda',['Lambda',['../classjade_1_1util_1_1_lambda.html',1,'jade::util']]],
   ['lambdatest',['LambdaTest',['../classtest_1_1util_1_1_lambda_test.html',1,'test::util']]],
+  ['lastterminal',['lastTerminal',['../classrogue_1_1level_1_1_screen.html#ab4340fa3314a88d8421e6a96ab435caa',1,'rogue::level::Screen']]],
+  ['lastworld',['lastWorld',['../classrogue_1_1level_1_1_screen.html#ac5ab147e03c4fc762a3653d1aeb63db6',1,'rogue::level::Screen']]],
   ['level',['Level',['../classrogue_1_1level_1_1_level.html',1,'rogue::level']]],
   ['listbackpack',['listBackpack',['../classrogue_1_1creature_1_1util_1_1_inventory.html#a5ec45f728ca870087020b33e00e7baed',1,'rogue::creature::util::Inventory']]],
   ['look',['look',['../classjade_1_1core_1_1_world.html#a7277a70e4ef3f3aa6fc9d516fe8acadc',1,'jade.core.World.look(int x, int y)'],['../classjade_1_1core_1_1_world.html#a4b29b39eecd12c46de8e1f6e7f3e07ef',1,'jade.core.World.look(Coordinate pos)']]],
