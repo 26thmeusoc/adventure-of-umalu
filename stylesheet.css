@@ -13,3 +13,12 @@
 .center-text {
 	text-align: center;
 }
+
+.monospaced {
+	font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+}
+
+.scale-fullpic {
+	height:250px;
+	width:auto;
+}

@@ -2,14 +2,13 @@
 	"http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-	<title>Adventures in Umalu</title>
+	<title>Adventure at Umalu</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link href="stylesheet.css" rel="stylesheet" type="text/css">
 </head>	
 <body>
-	<!--<h1 id="title">Adventures in Umalu</h1>-->
-	<p id="title"><img src="./img/Start.png" alt="Adventures of Umalu"></p>
-	<p>Adventures in Umalu ist ein rogue-like Dungeon-crawler Spiel, geschrieben in Java. Es wurde im Zuge des Sofwarepraktikum-Kurses 2013 des <a href="http://www.mi.fu-berlin.de/inf/">Instituts f&uuml;r Informatik</a> der <a href="http://www.fu-berlin.de">Freien Universit&auml;t Berlin</a> von
+	<p id="title"><img src="./img/Start.png" alt="Adventure at Umalu"></p>
+	<p>Adventure at Umalu ist ein rogue-like Dungeon-crawler Spiel, geschrieben in Java. Es wurde im Zuge des <a href="https://www.mi.fu-berlin.de/kvv/course.htm?cid=10669&sid=26&iid=1">Sofwarepraktikum-Kurses 2013</a> des <a href="http://www.mi.fu-berlin.de/inf/">Instituts f&uuml;r Informatik</a> der <a href="http://www.fu-berlin.de">Freien Universit&auml;t Berlin</a> von
 	<ul>
 		<li><a href="https://github.com/26thmeusoc">Dirk Braun</a></li>
 		<li><a href="https://github.com/Zarroc1991">Paul Kermas</a></li>
@@ -17,20 +16,48 @@
 		<li><a href="https://github.com/Schachus">Markus Penner</a></li>
 		<li><a href="https://github.com/TheStube">Christoph Spenke</a></li>
 	</ul>
-	<p>entwickelt. Adventures of Umalu verwendet die <a href="http://code.google.com/p/jaderogue/">jade-rogue Library</a> von Jeffrey Lund.
-	<p>Adventures of Umalu besteht aus zwei Spielen:
+	<p>entwickelt. Adventure at Umalu verwendet die <a href="http://code.google.com/p/jaderogue/">jade-rogue Library</a> von Jeffrey Lund.
+	<p>Adventure at Umalu besteht aus zwei Spielen:
 	<dl>
-		<dt>Adventures in Umalu</dt> <dd>- Geh auf ein Abenteuer um den Drachen Ra's al-Ghul aus dem Berge Umalu zu vertreiben.
-		<dt>Running in Umalu</dt> <dd>- Geh auf Geschwindigkeitsjagd in den Karten von <i>Adventures in Umalu</i>. Mache dabei so wenige Schritte in so kurzer Zeit wie m&ouml;glich.</dd>
+		<dt>Adventure at Umalu</dt> <dd>- Geh auf ein Abenteuer um den Drachen Ra's al-Ghul aus dem Berge Umalu zu vertreiben.
+		<dt>Running in Umalu</dt> <dd>- Geh auf Geschwindigkeitsjagd in den Karten von <i>Adventure at Umalu</i>. Mache dabei so wenige Schritte in so kurzer Zeit wie m&ouml;glich.</dd>
 	</dl>
+	<h2 id="features">Features</h2>
+	<ul>
+		<li>Ein Field of View</li>
+		<li>Inventar</li>
+		<li>Viele Gegenstände die man finden kann</li>
+	</ul>
+	<table style="margin-left:auto;margin-right:auto">
+		<tr><td colspan="2" style="text-align:center"><img src="./img/welt1.png" alt="Welt1" class="scale-fullpic"></td></tr>
+		<tr><td><img src="./img/welt2.png" alt="Welt2" class="scale-fullpic"></td><td><img src="./img/welt3.png" alt="Welt3" class="scale-fullpic"></td></tr>
+		<tr><td><img src="./img/welt4.png" alt="Welt4" class="scale-fullpic"></td><td><img src="./img/welt5.png" alt="Welt5" class="scale-fullpic"></td></tr>
+	</table>
+	<h2 id="spielen">Adventure at Umalu spielen</h2>
 	<p>Es gibt die folgenden M&ouml;glichkeiten um Adventures oder Running in Umalu zu spielen:
 		<ul>
-			<li><a href="#source">Sourcen laden und kompilieren</a></li>
 			<li><a href="#jar">.jar Datei laden und starten</a></li>
+			<li><a href="#source">Sourcen laden und kompilieren (fortgeschritten)</a></li>
 		</ul>
-	<h2 id="source" class="subtitle">Sourcen laden und kompilieren</h2>
+	<h2 id="jar" class="subtitle">.jar Datei laden und starten</h2>
 	<ol>
-		<li> Lade die Daten mit git von der Projektseite:
+		<li>Lade die .jar Datei herunter: <a href="http://userpage.fu-berlin.de/meusoc/adventure-of-umalu.jar">Herunterladen</a></li>
+		<li>&Ouml;ffne deinen Terminalclient und wechsel in den Ordner mit der .jar Datei</li>
+		<li>Starte Adventure at Umalu
+		<pre>
+java -jar adventure-of-umalu.jar
+		</pre>
+		</li>
+		<li> oder: Starte Running in Umalu:
+		<pre>
+java -jar adventure-of-umalu.jar speedrun
+		</pre></li>
+		<li>Hinweis: Unter MacOS X genügt ein Doppelklick auf die heruntergeladene adventure-of-umalu.jar Datei um Adventure at Umalu spielen zu k&uml;nnen</li>
+	</ol>
+
+	<h2 id="source" class="subtitle">Sourcen laden und kompilieren (fortgeschritten)</h2>
+	<ol>
+		<li> Lade die Daten mit git von der Projektseite. Entweder durch klicken auf den .zip Button oder mit git:
 			<pre>
 git clone https://github.com/26thmeusoc/adventure-of-umalu.git adventure-of-umalu
 			</pre>
@@ -45,7 +72,7 @@ cd adventure-of-umalu/src
 javac rogue/Rogue.java
 			</pre>
 		</li>
-		<li> Starte das Programm (Adventures in Umalu)
+		<li> Starte das Programm (Adventure at Umalu)
 			<pre>
 java rogue/Rogue
 			</pre>
@@ -54,21 +81,6 @@ java rogue/Rogue
 		<pre>
 java rogue/Rogue speedrun
 		</pre>
-	</ol>
-	<h2 id="jar" class="subtitle">.jar Datei laden und starten</h2>
-	<ol>
-		<li>Lade die .jar Datei herunter: <a href="http://userpage.fu-berlin.de/meusoc/adventure-of-umalu.jar">Herunterladen</a></li>
-		<li>&Ouml;ffne deinen Terminalclient und wechsel in den Ordner mit der .jar Datei</li>
-		<li>Starte Adventure of Umalu
-		<pre>
-java -jar adventure-of-umalu.jar
-		</pre>
-		</li>
-		<li> oder: Starte Running in Umalu:
-		<pre>
-java -jar adventure-of-umalu.jar speedrun
-		</pre></li>
-		<li>Hinweis: Unter MacOS X genügt ein Doppelklick auf die heruntergeladene adventure-of-umalu.jar Datei.</li>
 	</ol>
 	<h2 id="doc" class="subtitle">Steuerung</h2>
 	<p>Die wichtigesten Tasten:</p>
@@ -86,12 +98,8 @@ java -jar adventure-of-umalu.jar speedrun
 		<tr><td class="center-text"><pre>h</pre></td><td>Eventlog aufrufen</td><td class="spacer"></td>
 			 <td class="center-text"><pre>o</pre></td><td>Hilfe aufrufen</td></tr>
 	</table>
-	<p>Weitere Informationen unter: </p>
+	<p>Weitere Informationen unter: <a href="./help.html">Hilfe</a></p>
 	<h2 id="docu" class="subtitle">Dokumentationen</h2>
-	<p>Die Quelltextdokumentationen zum Projekt sind verf&uuml;gbar unter <a href="./doc/index.html">Adventure of Umalu Dokumentation</a> (hergestellt mit Doxygen)</p>
-	<p>
-    <a href="http://validator.w3.org/check?uri=referer"><img
-      src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Strict" height="31" width="88"></a>
-  </p>
+	<p>Die Quelltextdokumentationen zum Projekt sind verf&uuml;gbar unter <a href="./doc/index.html">Adventure at Umalu Dokumentation</a></p>
 </body>
 </html>
