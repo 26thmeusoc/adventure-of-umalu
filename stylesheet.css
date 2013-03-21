@@ -5,3 +5,11 @@
 .subtitle {
 	color: #000000;
 }
+
+.spacer {
+	width: 55px;
+}
+
+.center-text {
+	text-align: center;
+}
